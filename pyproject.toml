@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "autopwn"
+version = "0.1.0"
+description = "autopwn is a state-of-the-art security tool designed to automate vulnerability detection and exploitation. Leveraging the Command and Query Responsibility Segregation (CQRS) architecture for efficient and secure management, it enables rapid identification of system weaknesses."
+authors = ["David Morán <david@dmoran.es>"]
+license = "GPLv3"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.1.11"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
