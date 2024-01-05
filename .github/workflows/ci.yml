@@ -1,0 +1,24 @@
+name: CI
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-python@v5.0.0
+        with:
+          python-version: 3.12
+      - name: Install poetry
+        run: pip install poetry
+
+      - name: Install poetry environment
+        run: poetry install
+
+      - name: Execute linter
+        run: poetry run ruff check
